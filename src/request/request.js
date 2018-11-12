@@ -1,9 +1,13 @@
-// Implementação simples e mínima da Fetch API,
+// Implementação simples e mínima `Fetch-like` API,
 // com apenas suporte a respostas `JSON` e `text`,
 // queries por objeto e também uma API amigável
 // com "atalhos" para os métodos `GET` e `POST`.
 
-import { querifySimple } from '../utils';
+import {
+  querifySimple,
+  hasXMLHttpRequestCORS,
+  hasXDomainSupport
+} from '@/utils';
 
 const defaultOptions = {
   method: 'GET',
@@ -23,18 +27,22 @@ function createResponse(request) {
   const heardersRegExp = /^(.*?):[^\S\n]*([\s\S]*?)$/gm;
   let header = undefined;
 
-  request.getAllResponseHeaders()
-    .replace(heardersRegExp, (match, key, value) => {
-      header = headers[key];
-      headers[key] = header ? `${header},${value}` : value;
+  if (hasXMLHttpRequestCORS) {
+    request.getAllResponseHeaders()
+      .replace(heardersRegExp, (match, key, value) => {
+        header = headers[key];
+        headers[key] = header ? `${header},${value}` : value;
 
-      all.push([key, value]);
-      keys.push(key = key.toLowerCase());
-    });
+        all.push([key, value]);
+        keys.push(key = key.toLowerCase());
+      });
+  }
+
+  const statusCode = (request.status || 200);
 
   return {
-    ok: (request.status/100|0) == 2,
-    status: request.status,
+    ok: (statusCode/100|0) == 2,
+    status: statusCode,
     statusText: request.statusText,
     url: request.responseURL,
     text: () => Promise.resolve(request.responseText),
@@ -50,19 +58,33 @@ function createResponse(request) {
 
 function request(url = '/', options = {}) {
 	return new Promise((resolve, reject) => {
+    
+    let request;
 
-    // Cria uma nova instância do XMLHttpRequest em cada requisição.
-    const request = new XMLHttpRequest();
+    if (hasXMLHttpRequestCORS) {
+      request = new XMLHttpRequest();
+    } else {
+      // Verifica se há supporte à última
+      // maneira de fazer requests com CORS.
+      if (hasXDomainSupport) {
+        request = new XDomainRequest();
+      }
+    }
+
+    if (!request) return reject(new Error('NoCORSSupport'));
+
     const config = Object.assign(defaultOptions, options);
     const query = querifySimple(options.query || options.params);
 
     // Inicia a requisição.
-		request.open(config.method || 'get', `${url}${query}`, true);
+		request.open(config.method || 'GET', `${url}${query}`, true);
 
-    // Configura os headers do request.
-		for (let i in config.headers) {
-			request.setRequestHeader(i, config.headers[i]);
-		}
+    // Configura os headers do request do XMLHttpRequest.
+		if (hasXMLHttpRequestCORS) {
+      for (let i in config.headers) {
+        request.setRequestHeader(i, config.headers[i]);
+      }
+    }
 
     // Configura os handlers de sucesso e erro.
     request.onerror = reject;
@@ -71,7 +93,7 @@ function request(url = '/', options = {}) {
 		};
 
     // Envia a requisição.
-		request.send(config.body || null);
+    request.send(config.body || null);
 	});
 }
 
