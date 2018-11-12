@@ -1,4 +1,4 @@
-import { Component } from '@/utils';
+import { Component, setClassElement } from '@/utils';
 
 const {
   mountNodesFrom,
@@ -44,9 +44,9 @@ function SkillItem({
     ] = rest;
 
     // Aplicando classes aos elementos
-    contentEl.classList.add('skill-item__content');
-    parent.classList.add('skill-item');
-    textAndDescriptionEl.classList.add('skill-item__text-content');
+    setClassElement('skill-item', parent);
+    setClassElement('skill-item__content', contentEl);
+    setClassElement('skill-item__text-content', textAndDescriptionEl);
 
     headingEl.textContent = name;
     descriptionEl.textContent = LEVELS_MAPPINGS[level];

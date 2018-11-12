@@ -1,4 +1,4 @@
-import { Component } from '@/utils';
+import { Component, setClassName } from '@/utils';
 import request from '@/request';
 
 import './styles.css';
@@ -109,9 +109,9 @@ function Skills() {
       categoryHeading.setAttribute('id', categoryId);
       anchor.setAttribute('href', `#${categoryId}`);
 
-      list.classList.add('skills__list');
-      parent.classList.add('skills__set');
-      categoryHeading.classList.add('skills__category-heading');
+      setClassName('skills__list', list);
+      setClassName('skills__set', parent);
+      setClassName('skills__category-heading', categoryHeading);
 
       mountNodesFrom({ parent, children });
       mountNodeFrom(parent, mainList);
@@ -122,9 +122,9 @@ function Skills() {
     anchor.setAttribute('href', '#competencias-tecnicas');
 
     // Adicionando as classes de cada elemento DOM.
-    content.classList.add('skills__content', 'subsection');
-    mainList.classList.add('skills__category', 'flex', 'wrap', 'justify-start');
-    section.classList.add('section', 'section--border-bottom', 'fadeIn');
+    setClassName('skills__content subsection', content);
+    setClassName('skills__category flex wrap justify-start', mainList);
+    setClassName('section section--border-bottom fadeIn', section);
 
     // Adicionando texto aos elementos.
     heading.textContent = 'Competências Técnicas';

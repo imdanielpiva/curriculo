@@ -1,4 +1,5 @@
 import {
+  setClassName,
   appendNestedElements,
   createNestedElements
 } from '@/utils';
@@ -75,11 +76,13 @@ function CompanyItem({
     startDateTitleEl.textContent = 'Ínicio';
     endDateTitleEl.textContent = 'Término';
 
-    paragraph.style.color = 'var(--light-grey-1);'
-    startDateEl.classList.add('table__row-text');
-    endDateEl.classList.add('table__row-text');
-    startDateTitleEl.classList.add('table__col-title');
-    endDateTitleEl.classList.add('table__col-title');
+    // Adicionando classes e estilos aos elementos DOM.
+    paragraph.style.color = '#6a737d'
+
+    setClassName('table__row-text', startDateEl);
+    setClassName('table__row-text', endDateEl);
+    setClassName('table__col-title', startDateTitleEl);
+    setClassName('table__col-title', endDateTitleEl);
 
     return { $el: parent };
   };

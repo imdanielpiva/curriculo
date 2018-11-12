@@ -1,3 +1,6 @@
+export const setClassName = (className, element) =>
+  element.className = className;
+
 export const hasXMLHttpRequestCORS = ('withCredentials' in new XMLHttpRequest());
 
 export const hasXDomainSupport = typeof window.XDomainRequest !== undefined;
