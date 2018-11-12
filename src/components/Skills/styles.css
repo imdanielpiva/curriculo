@@ -1,7 +1,7 @@
 .skills__category {
   margin: 0;
   padding: 0;
-  list-style-type: var(--none);
+  list-style-type: none;
 }
 
 .skills__list {
@@ -10,7 +10,7 @@
 }
 
 .skills__category-heading {
-  border-bottom: 1px solid var(--light-grey-2);
+  border-bottom: 1px solid #e1e4e8;
 }
 
 .skills__set {

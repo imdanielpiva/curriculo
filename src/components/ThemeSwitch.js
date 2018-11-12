@@ -103,13 +103,13 @@ function ThemeSwitch({ theme }) {
 
         .theme--light a, p,
         span, label, td {
-          color: var(--light-grey-1) !important;
+          color: #6a737d !important;
         }
       
         .theme--light
         h1, h2, h3,
         h4, h5, h6, div {
-          color: var(--black) !important;
+          color: #2f3740 !important;
         }
       `;
 
@@ -122,9 +122,9 @@ function ThemeSwitch({ theme }) {
     darkInput.addEventListener('change', () => {
       styleEl.textContent = `
         .theme--dark {
-          background: var(--black);
+          background: #2f3740;
         }
-        
+    
         .theme--dark
         a, p, span, label, h1, h2, h3,
         h4, h5, h6, div, th,

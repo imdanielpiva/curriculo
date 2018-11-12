@@ -61,22 +61,22 @@ a:active {
 }
 
 #app.theme--light a {
-  color: var(--black);
-  text-decoration-color: var(--black);
+  color: #2f3740;
+  text-decoration-color: #2f3740;
 }
 
 #app.theme--light a:hover {
-  text-decoration-color: var(--black);
+  text-decoration-color: #2f3740;
 }
 
 #app.theme--light a:active {
-  text-decoration-color: var(--light-grey-1);
+  text-decoration-color: #6a737d;
 }
 
 .personal-information__list {
   margin: 46px 0 0 0;
   padding: 0;
-  list-style-type: var(--none);
+  list-style-type: none;
 }
 
 .address {
@@ -90,14 +90,14 @@ a:active {
 .address__list {
   margin: 0;
   padding: 0;
-  list-style-type: var(--none);
+  list-style-type: non;
 }
 
 .complementary-courses {
   flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
-  list-style-type: var(--none);
+  list-style-type: non;
   padding: 0;
 }
 
@@ -111,8 +111,8 @@ a:active {
 }
 
 .complementary-courses__item:not(:last-child):not(:first-child) {
-  border-left: 1px solid var(--light-grey-2);
-  border-right: 1px solid var(--light-grey-2);
+  border-left: 1px solid #e1e4e8;
+  border-right: 1px solid #e1e4e8;
 }
 
 @media screen and (max-width: 800px) {
@@ -125,13 +125,13 @@ a:active {
   }
 
   .complementary-courses__item:not(:last-child):not(:first-child) {
-    border-left: var(--none);
-    border-right: var(--none);
+    border-left: non;
+    border-right: non;
   }
 
   .complementary-courses__item:not(:last-child) {
-    border-bottom: 1px solid var(--light-grey-2);
-    border-left: var(--none);
+    border-bottom: 1px solid #e1e4e8;
+    border-left: non;
   }
 }
 
@@ -219,7 +219,7 @@ a:active {
 
 .section--border-bottom,
 .header--border-bottom {
-  border-bottom: 1px solid var(--light-grey-2);
+  border-bottom: 1px solid #e1e4e8;
 }
 
 .subsection {
@@ -228,7 +228,7 @@ a:active {
 }
 
 .header--light-border-bottom:last-child {
-  border-bottom: var(--none);
+  border-bottom: non;
 }
 
 .theme--light {
@@ -247,7 +247,7 @@ a:active {
 .table__col-title {
   text-align: left;
   padding: 18px 18px 18px 0;
-  border-bottom: 1px solid var(--light-grey-2);
+  border-bottom: 1px solid #e1e4e8;
 }
 
 h1 {
