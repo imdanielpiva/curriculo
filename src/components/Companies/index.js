@@ -1,4 +1,4 @@
-import { Component } from '@/utils';
+import { Component, setClassName } from '@/utils';
 import request from '@/request';
 import CompanyItem from '@/components/CompanyItem';
 
@@ -42,8 +42,8 @@ function Companies() {
     parent.setAttribute('id', 'experiencia-profissional');
     anchor.setAttribute('href', '#experiencia-profissional');
 
-    parent.classList.add('section', 'section--border-bottom', 'fadeIn');
-    list.classList.add('work-experience__list');
+    setClassName('work-experience__list', list);
+    setClassName('section section--border-bottom fadeIn', parent);
 
     heading.textContent = 'Experiência Profissional';
 

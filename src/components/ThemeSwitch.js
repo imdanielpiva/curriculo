@@ -1,4 +1,4 @@
-import { Component } from '@/utils';
+import { Component, setClassName } from '@/utils';
 
 const {
   createElement,
@@ -115,8 +115,7 @@ function ThemeSwitch({ theme }) {
 
       value = lightInput.value;
 
-      app.classList.remove('theme--dark');
-      app.classList.add('theme--light');
+      setClassName('theme--light', app);
     });
 
     darkInput.addEventListener('change', () => {
@@ -136,8 +135,7 @@ function ThemeSwitch({ theme }) {
 
       value = darkInput.value;
 
-      app.classList.remove('theme--light');
-      app.classList.add('theme--dark');
+      setClassName('theme--dark', app);
     });
 
     // Disparando o evento `change` para o input,
