@@ -1,3 +1,7 @@
+export const hasXMLHttpRequestCORS = ('withCredentials' in new XMLHttpRequest());
+
+export const hasXDomainSupport = typeof window.XDomainRequest !== undefined;
+
 export const mount = (Component, props) => Component.mount(props);
 
 export const getParent = (element = []) => ({
