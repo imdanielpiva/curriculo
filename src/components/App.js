@@ -33,19 +33,17 @@ async function App() {
   const companies = await mount(Companies);
   const skills = await mount(Skills);
 
-  // Buscando os `mount-points` (elementos DOM)
-  // para inserir de cada componente criado
-  // dinamicamente: <Companies>, <ThemeSwitch> e <Skills>
-  const [mainHeading, personalInfo, education] = Array.from(
-    document.querySelectorAll(`
-      #formacao,
-      #informacoes-pessoais,
-      #daniel-piva-lemes-felicio a
-    `)
+  // Inserindo componentes no DOM.
+
+  appendAfter(
+    skills.$el,
+    document.querySelector('#formacao')
   );
 
-  appendAfter(skills.$el, education);
-  appendAfter(companies.$el, personalInfo);
+  appendAfter(
+    companies.$el,
+    document.querySelector('#informacoes-pessoais')
+  );
 
   // Não cria nem monta o <ThemeSwitch>
   // caso a página seja específica do tema.
@@ -65,7 +63,10 @@ async function App() {
       theme: theme === 'dark' ? theme : 'light'
     });
 
-    appendAfter(themeSwitch.$el, mainHeading);
+    appendAfter(
+      themeSwitch.$el,
+      document.querySelector('#daniel-piva-lemes-felicio a')
+    );
   }
 
   return () => { return { $el, state }; };
