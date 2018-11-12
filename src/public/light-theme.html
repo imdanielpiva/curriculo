@@ -7,7 +7,10 @@
   <meta name="keywords" content="<%= htmlWebpackPlugin.options.keywords %>">
   <meta name="description" content="<%= htmlWebpackPlugin.options.description %>">
   <title><%= htmlWebpackPlugin.options.title %></title>
-  <meta http-equiv="Content-Security-Policy" content="font-src data: https://danielpiva.surge.sh http://localhost:8080/" />
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src https://danielpiva.surge.sh https://imdanielpiva.surge.sh https://demo3877710.mockable.io/; font-src 'self' data: https://danielpiva.surge.sh https://imdanielpiva.surge.sh; style-src 'self' 'unsafe-inline';"
+  />
 
   <style>
     .theme--light {
