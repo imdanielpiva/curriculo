@@ -1,0 +1,27 @@
+.skills__category {
+  margin: 0;
+  padding: 0;
+  list-style-type: var(--none);
+}
+
+.skills__list {
+  margin: 24px 0 0 0;
+  padding: 0;
+}
+
+.skills__category-heading {
+  border-bottom: 1px solid var(--light-grey-2);
+}
+
+.skills__set {
+  min-width: calc(50% - 32px);
+  padding: 0px 0px 32px 0;
+  margin: 32px 32px 0 0;
+}
+
+@media screen and (max-width: 470px) {
+  .skills__set {
+    width: 100%;
+    margin-right: 0;
+  }
+}

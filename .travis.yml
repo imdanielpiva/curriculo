@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - "stable"
+
+cache:
+  directories:
+    - node_modules
+
+script:
+  - yarn build
+
+deploy:
+  skip_cleanup: true
+  provider: surge
+  domain: https://danielpiva.surge.sh
+  project: ./dist/
+
+on:
+  branch: master

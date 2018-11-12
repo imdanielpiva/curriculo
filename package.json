@@ -1,0 +1,47 @@
+{
+  "name": "curriculo",
+  "version": "0.0.0",
+  "description": "Aplicação para o teste online do processo seletivo da Advise.",
+  "main": "index.js",
+  "repository": "https://github.com/imdanielpiva/curriculo",
+  "author": "Daniel Piva <imdanielpiva@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "webpack --env.production --config ./webpack.config.js",
+    "serve": "webpack-dev-server --env.development --open",
+    "deploy": "surge ./dist/ https://danielpiva.surge.sh",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "@babel/preset-env": "^7.1.5",
+    "@babel/runtime": "^7.1.5",
+    "babel-loader": "^8.0.4",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^1.0.1",
+    "extract-loader": "^3.0.0",
+    "file-loader": "^2.0.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-include-assets-plugin": "^1.0.6",
+    "html-webpack-plugin": "^3.2.0",
+    "img-loader": "^3.0.1",
+    "jest": "^23.6.0",
+    "jest-transform-stub": "^1.0.0",
+    "mini-css-extract-plugin": "^0.4.4",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "terser": "^3.10.11",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "core-js": "^2.5.7",
+    "promise-polyfill": "^8.1.0"
+  }
+}
