@@ -146,11 +146,11 @@ function ThemeSwitch({ theme }) {
     if (value === 'light') {
       lightInput.checked = true;
 
-      lightInput.dispatchEvent(new Event('change'));
+      lightInput.dispatchEvent(new CustomEvent('change'));
     } else {
       darkInput.checked = true;
 
-      darkInput.dispatchEvent(new Event('change'));
+      darkInput.dispatchEvent(new CustomEvent('change'));
     }
 
     return { $el: themeControl };

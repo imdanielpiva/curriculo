@@ -59,7 +59,7 @@ async function App() {
       !href.includes('light-theme.html')
     )
     )) {
-    const themeSwitch = await mount(ThemeSwtich, {
+    const themeSwitch = mount(ThemeSwtich, {
       theme: theme === 'dark' ? theme : 'light'
     });
 

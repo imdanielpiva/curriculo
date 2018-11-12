@@ -73,23 +73,23 @@ module.exports = env => {
     })
   ];
 
-  if (isProduction) {
-    rules.unshift({
-      test: /\.js$/,
-      exclude: /node_modules/,
-      loader: 'babel-loader',
-      options: {
-        cacheCompression: true,
-        presets: [
-          [
-            '@babel/preset-env',
-            { targets: { ie: '8' } }
-          ]
-        ],
-        plugins: ['@babel/plugin-syntax-dynamic-import']
-      }
-    });
+  rules.unshift({
+    test: /\.js$/,
+    exclude: /node_modules/,
+    loader: 'babel-loader',
+    options: {
+      cacheCompression: true,
+      presets: [
+        [
+          '@babel/preset-env',
+          { targets: { ie: '8' } }
+        ]
+      ],
+      plugins: ['@babel/plugin-syntax-dynamic-import']
+    }
+  });
 
+  if (isProduction) {
     plugins.push(
       new OptimizeCssAssetsPlugin({
         cssProcessorPluginOptions: {
@@ -118,6 +118,8 @@ module.exports = env => {
 
   return {
     entry: [
+      './src/bind',
+      './src/Event',
       '@babel/polyfill',
       './src/index'
     ],
