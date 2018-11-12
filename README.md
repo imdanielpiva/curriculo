@@ -30,44 +30,44 @@ Para rodar o projeto você precisa no mínimo ter o  [`node`](http://nodejs.org)
 ## Estrutura de Pastas
 
 .
-  +-- __dist/__
-  |   +-- <i>arquivos de distribuição...</i>
-  +-- __src/__
-  |   +-- footer.html
-  |   +-- header.html
-  +---- __assets/__
-  |   +---- __css/__
-  |   +------ styles.css
-  |   +---- __font/__
-  |   +------ <i>arquivos de fonte ...</i>
-  +---- __components__
-  |   +---- __Companies/__
-  |   +------ index.js
-  |   +------ styles.css
-  |   +---- __SkillItem/__
-  |   +------ index.js
-  |   +------ styles.css
-  |   +----- __Skills/__
-  |   +------ index.js
-  |   +------ styles.css
-  |   +----- App.js
-  |   +----- CompanyItem.js
-  |   +----- ThemeSwitch.js
-  +---- __public/__
-  |   +-- index.html
-  |   +-- dark-theme.html
-  |   +-- light-theme.html
-  +---- __request/__
-  |   +-- request.js
-  |   +-- index.js
-  +-- bind.js
-  +-- meta.json
-  +-- utils.js
-  +-- index.js
-  +-- __tests/__
-  |   +---- __unit/__
-  |   +------ <i>arquivos de testes unitários...</i>
-  | <i>arquivos de configuração...</i>
+  +-- __dist/__<br>
+  |   +-- <i>arquivos de distribuição...</i><br>
+  +-- __src/__<br>
+  |   +-- footer.html<br>
+  |   +-- header.html<br>
+  +---- __assets/__<br>
+  |   +---- __css/__<br>
+  |   +------ styles.css<br>
+  |   +---- __font/__<br>
+  |   +------ <i>arquivos de fonte ...</i><br>
+  +---- __components__<br>
+  |   +---- __Companies/__<br>
+  |   +------ index.js<br>
+  |   +------ styles.css<br>
+  |   +---- __SkillItem/__<br>
+  |   +------ index.js<br>
+  |   +------ styles.css<br>
+  |   +----- __Skills/__<br>
+  |   +------ index.js<br>
+  |   +------ styles.css<br>
+  |   +----- App.js<br>
+  |   +----- CompanyItem.js<br>
+  |   +----- ThemeSwitch.js<br>
+  +---- __public/__<br>
+  |   +-- index.html<br>
+  |   +-- dark-theme.html<br>
+  |   +-- light-theme.html<br>
+  +---- __request/__<br>
+  |   +-- request.js<br>
+  |   +-- index.js<br>
+  +-- bind.js<br>
+  +-- meta.json<br>
+  +-- utils.js<br>
+  +-- index.js<br>
+  +-- __tests/__<br>
+  |   +---- __unit/__<br>
+  |   +------ <i>arquivos de testes unitários...</i><br>
+  | <i>arquivos de configuração...</i><br>
 
 ## Autor
 
