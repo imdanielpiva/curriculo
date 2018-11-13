@@ -27,7 +27,7 @@ module.exports = env => {
           loader: MiniCssExtractPlugin.loader,
           options: {
             sourceMap,
-            publicPath: './src/'
+            publicPath: './'
           }
         },
         'css-loader'
