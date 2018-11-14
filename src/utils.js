@@ -98,23 +98,10 @@ export const querifySimple = (object = {}) => {
     return query ? `?${query}` : '';
 };
 
-export const swapElementClasses = ({
-  classes = ['', ''],
-  element
-}) => {
-  const [first, second] = classes;
-
-  element.classList.remove(first);
-  element.classList.add(second);
-
-  return [second, first];
-};
-
 export const Component = {
   parent: getParent,
   children: getChildren,
   setStyle: setElementStyle,
-  swapClasses: swapElementClasses,
   createElement,
   createNestedElements,
   unMount: remove,

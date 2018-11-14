@@ -70,11 +70,11 @@ function ThemeSwitch({ theme }) {
     document.head.appendChild(styleEl);
 
     // Adicionando as classes aos elementos DOM.
-    themeControl.classList.add('theme-control', 'fadeIn');
-    heading.classList.add('theme-control__title');
-    themeControlController.classList.add('theme-control__controllers');
-    lightControl.classList.add('theme-control__input');
-    darkControl.classList.add('theme-control__input');
+    setClassName('theme-control fadeIn', themeControl);
+    setClassName('theme-control__title', heading);
+    setClassName('theme-control__controllers', themeControlController);
+    setClassName('theme-control__input', lightControl);
+    setClassName('theme-control__input', darkControl);
 
     // Adicionando conteúdo de texto aos elementos DOM.
     heading.textContent = 'Tema';
