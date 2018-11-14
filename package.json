@@ -1,6 +1,6 @@
 {
   "name": "curriculo",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Aplicação para o teste online do processo seletivo da Advise.",
   "main": "index.js",
   "repository": "https://github.com/imdanielpiva/curriculo",
